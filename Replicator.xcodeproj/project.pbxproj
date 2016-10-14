@@ -14,6 +14,7 @@
 		C02C5E241DB1138500B41349 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C02C5E221DB1138500B41349 /* LaunchScreen.storyboard */; };
 		C02C5E2F1DB1138500B41349 /* ReplicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02C5E2E1DB1138500B41349 /* ReplicatorTests.swift */; };
 		C02C5E3A1DB1138500B41349 /* ReplicatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02C5E391DB1138500B41349 /* ReplicatorUITests.swift */; };
+		C02C5E481DB1154700B41349 /* ReplicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02C5E471DB1154700B41349 /* ReplicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		C02C5E351DB1138500B41349 /* ReplicatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReplicatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C02C5E391DB1138500B41349 /* ReplicatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplicatorUITests.swift; sourceTree = "<group>"; };
 		C02C5E3B1DB1138500B41349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C02C5E471DB1154700B41349 /* ReplicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				C02C5E191DB1138500B41349 /* AppDelegate.swift */,
 				C02C5E1B1DB1138500B41349 /* ViewController.swift */,
+				C02C5E471DB1154700B41349 /* ReplicatorView.swift */,
 				C02C5E1D1DB1138500B41349 /* Main.storyboard */,
 				C02C5E201DB1138500B41349 /* Assets.xcassets */,
 				C02C5E221DB1138500B41349 /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C02C5E481DB1154700B41349 /* ReplicatorView.swift in Sources */,
 				C02C5E1C1DB1138500B41349 /* ViewController.swift in Sources */,
 				C02C5E1A1DB1138500B41349 /* AppDelegate.swift in Sources */,
 			);

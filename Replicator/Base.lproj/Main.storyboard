@@ -1,14 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Replicator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +19,59 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="krq-gA-xr2">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dog" translatesAutoresizingMaskIntoConstraints="NO" id="tGD-nB-wAk">
+                                        <color key="backgroundColor" red="1" green="0.25098039220000001" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="IsJ-gf-dgG"/>
+                                            <constraint firstAttribute="height" constant="150" id="fgg-WC-8lm"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJV-6V-NjS" customClass="ReplicatorView" customModule="Replicator" customModuleProvider="target">
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="dotColor">
+                                                <color key="value" red="0.0078431372550000003" green="0.53333333329999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="dotInstances">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="tGD-nB-wAk" firstAttribute="top" secondItem="krq-gA-xr2" secondAttribute="top" constant="15" id="2Lo-cB-BWl"/>
+                                    <constraint firstAttribute="trailing" secondItem="tJV-6V-NjS" secondAttribute="trailing" constant="67.5" id="Rln-On-Rih"/>
+                                    <constraint firstItem="tJV-6V-NjS" firstAttribute="top" secondItem="tGD-nB-wAk" secondAttribute="bottom" constant="20" id="Vt2-0s-nSW"/>
+                                    <constraint firstItem="tGD-nB-wAk" firstAttribute="centerX" secondItem="krq-gA-xr2" secondAttribute="centerX" id="ZRf-CY-4xw"/>
+                                    <constraint firstAttribute="width" secondItem="krq-gA-xr2" secondAttribute="height" multiplier="1:1" id="Zbq-c1-C74"/>
+                                    <constraint firstAttribute="bottom" secondItem="tJV-6V-NjS" secondAttribute="bottom" constant="20" id="i9e-9r-s9c"/>
+                                    <constraint firstItem="tJV-6V-NjS" firstAttribute="leading" secondItem="krq-gA-xr2" secondAttribute="leading" constant="67.5" id="sMN-VA-REH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0078431372550000003" green="0.53333333329999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="krq-gA-xr2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="Fh5-ig-F1E"/>
+                            <constraint firstItem="krq-gA-xr2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qgP-qS-WVS"/>
+                            <constraint firstItem="krq-gA-xr2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xWG-Mw-me5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="avatar" destination="tGD-nB-wAk" id="Yio-zK-DyJ"/>
+                        <outlet property="cardView" destination="krq-gA-xr2" id="1Un-D7-UKf"/>
+                        <outlet property="replicatorView" destination="tJV-6V-NjS" id="y9y-S5-60G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Dog" width="150" height="145"/>
+    </resources>
 </document>
