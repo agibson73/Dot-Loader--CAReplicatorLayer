@@ -11,6 +11,9 @@ import UIKit
 @IBDesignable class ReplicatorView: UIView {
 
 
+
+    
+    
     var loadingReplicator : CAReplicatorLayer!
     @IBInspectable var dotColor : UIColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1){
         didSet{
@@ -39,6 +42,10 @@ import UIKit
     
     func setUp(){
         layoutIfNeeded()
+        
+        
+        
+        
         let dot = CALayer()
         dot.frame = CGRect(x: 0, y: 0, width: min(self.bounds.width, self.bounds.height), height: min(self.bounds.width, self.bounds.height))
         
@@ -52,17 +59,17 @@ import UIKit
  
         }
         dot.position = CGPoint(x: width/2, y: self.bounds.height/2)
+        
+        
+        
         //find how much space we need between them
         let freeSpace = self.bounds.width - (CGFloat(dotInstances) * width)
-
-        var spaceBetween = freeSpace/(CGFloat(dotInstances - 1))
-
+        let spaceBetween = freeSpace/(CGFloat(dotInstances - 1))
         
         if spaceBetween > dotSpace{
-            let positionAdj = spaceBetween - dotSpace
-            spaceBetween = spaceBetween - positionAdj
-            print("The space between is \(spaceBetween)")
-            dot.position = CGPoint(x: width/2 + positionAdj, y: self.bounds.height/2)
+            let totalDotSpaceNeeded = dotSpace * CGFloat(dotInstances)
+            let firstPosition = (freeSpace - totalDotSpaceNeeded)/2.0
+            dot.position = CGPoint(x: width/2 + firstPosition/2, y: self.bounds.height/2)
         }
 
         dot.backgroundColor = dotColor.cgColor
@@ -87,7 +94,6 @@ import UIKit
             loadingReplicator.instanceTransform = CATransform3DMakeTranslation(spaceBetween + width, 0.0, 0.0)
             loadingReplicator.instanceCount = dotInstances
         }
-        
         
     }
     
