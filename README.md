@@ -2,4 +2,4 @@
 Fun with CAReplicator
 
 
-[[ http://imgur.com/a/0uAQd | height = 100px ]]
+![Alt Text](http://imgur.com/a/0uAQd)
