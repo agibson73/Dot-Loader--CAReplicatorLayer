@@ -2,4 +2,4 @@
 Fun with CAReplicator
 
 
-![Alt Text](http://imgur.com/a/0uAQd)
+![Alt Text](http://oakmonttech.com/wp-content/uploads/2016/10/indicator.gif)
