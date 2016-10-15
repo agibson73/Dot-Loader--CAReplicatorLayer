@@ -2,4 +2,5 @@
 Fun with CAReplicator
 
 
-![Alt Text](http://imgur.com/a/0uAQd)
+![Alt Text](http://imgur.com/a/0uAQd.gif)
+
