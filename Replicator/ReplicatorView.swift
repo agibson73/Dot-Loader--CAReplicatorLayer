@@ -58,20 +58,14 @@ import UIKit
             dot.frame = CGRect(x: 0, y: 0, width: width, height: width)
  
         }
-        dot.position = CGPoint(x: width/2, y: self.bounds.height/2)
-        
-        
         
         //find how much space we need between them
-        let freeSpace = self.bounds.width - (CGFloat(dotInstances) * width)
-        let spaceBetween = freeSpace/(CGFloat(dotInstances - 1))
+        let totalFreeSpace = self.bounds.width - (CGFloat(dotInstances) * width)
+        let totalDotSpaceNeeded = dotSpace * CGFloat(dotInstances - 1)
+        let unusedDotSpace = totalFreeSpace - totalDotSpaceNeeded
         
-        if spaceBetween > dotSpace{
-            let totalDotSpaceNeeded = dotSpace * CGFloat(dotInstances)
-            let firstPosition = (freeSpace - totalDotSpaceNeeded)/2.0
-            dot.position = CGPoint(x: width/2 + firstPosition/2, y: self.bounds.height/2)
-        }
-
+    
+        dot.position = CGPoint(x: (unusedDotSpace/2) + width/2 , y: self.bounds.height/2)
         dot.backgroundColor = dotColor.cgColor
         dot.cornerRadius = dot.frame.width/2
         
@@ -79,7 +73,7 @@ import UIKit
             loadingReplicator = CAReplicatorLayer()
             loadingReplicator.addSublayer(dot)
             loadingReplicator.instanceCount = dotInstances
-            loadingReplicator.instanceTransform = CATransform3DMakeTranslation(spaceBetween + width, 0.0, 0.0)
+            loadingReplicator.instanceTransform = CATransform3DMakeTranslation(dotSpace + width, 0.0, 0.0)
             
             self.layer.addSublayer(loadingReplicator)
             
@@ -88,10 +82,10 @@ import UIKit
             loadingReplicator = CAReplicatorLayer()
             loadingReplicator.addSublayer(dot)
             loadingReplicator.instanceCount = dotInstances
-            loadingReplicator.instanceTransform = CATransform3DMakeTranslation(spaceBetween + width, 0.0, 0.0)
+            loadingReplicator.instanceTransform = CATransform3DMakeTranslation(dotSpace + width, 0.0, 0.0)
             
             self.layer.addSublayer(loadingReplicator)
-            loadingReplicator.instanceTransform = CATransform3DMakeTranslation(spaceBetween + width, 0.0, 0.0)
+            loadingReplicator.instanceTransform = CATransform3DMakeTranslation(dotSpace + width, 0.0, 0.0)
             loadingReplicator.instanceCount = dotInstances
         }
         
